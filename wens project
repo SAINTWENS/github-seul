@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WENS-RESTAURANT</title>
+
+    <link rel="styleshheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>WENS</h1>
+        <nav>
+        <ul>
+            <li id="logo"><a href="#">WENS ETREPRISE</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#reservation">reserver</a></li>
+            <li><a href="#contact">nous contacter</a></li>
+        </ul>
+        </nav>
+        <div id="image principale">
+            <h1>WENS-RESTAURANT</h1>
+        <div id="premier trait"></div>
+        <h3>RESTAURANT</h3>
+        </div>
+    </header>
+        <section id="banner">
+            <h2>bienvenue chez WENS</h2>
+            <p>dégustez nos délicieux plats dans un cadre agréable</p>
+        </section>
+        <section id="menu">
+            <h2>menu</h2>
+            <div class="dish">
+                <h3>plat 1.</h3> 
+                <p>poulet au pistache</p>
+                <samp class="price">1500FCFA</samp>
+            </div>
+            <div class="dish">
+                <h3>plat 2</h3>
+                <p>folong au poisson</p>
+                <samp class="priice">2000FCFA</samp>
+            </div>
+            <div class="dish">
+                <h3>plat 3</h3>
+                <p>ndolè viande morue et crevette</p>
+                <span class="price">3000FCA</span>
+            </div>
+        </section>
+        <section id="reservation">
+            <h2>reservation</h2>
+            <form>
+                <label for="date">date : </label>
+                <input type="date" id="date" name="date">
+                <label for="time">Heure : </label>
+                <input type="time" id="time" name="time">
+                <input type="submit" value="reserver">
+            </form>
+        </section>
+        <section id="contact">
+            <h2>contact</h2>
+            <p>Adresse : MBOUA, OBALA</p>
+            <p>Téléphone : 651618735</p>
+            <p>Email : wens3xsaint@gmail.com</p>
+            <p>whatsapp : 657713068</p>
+        </section>
+        <footer>
+            <h2>contacter nous</h2>
+            <form>
+                <input placeholder="nom et prenom"></input>
+                <imput placeholder="numero whatsapp"></imput>
+                <textarea placeholder="votre message ici..."></textarea>
+                <button>Envoyer</button>
+            </form>
+            <p>&copy; 2000Wens. tous droits reservés</p>
+        </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
