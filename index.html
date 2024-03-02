@@ -1,11 +1,113 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="SAINWENS">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <title>site web pour restaurant</title>
 </head>
 <body>
-    <h1>TRAVAIL SUR GIT</h1>
-    <h2>DEUXIEME ESSAI</h2>
+    <header>
+        <h1>LES D D P</h1>
+        <nav>
+            <ul>
+                <li class="active" ><a href="#">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Réservation</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
+            </ul>
+        </nav>
+        <div id="image-principale">
+            <h1>LES DELICES DE POUPY</h1>
+            <div id="premier-trait"></div>
+            <h3>RESTAURANT</h3>
+        </div>
+    </header>
+
+    <section id="banner">
+        <h2>Bienvenue chez POUPY</h2>
+        <p>Dégustez nos délicieux plats dans un cadre agréable</p>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="dish">
+            <h3>Plat 1</h3>
+            <img src="imagerestau/poisson d'eau douce.jpg">
+            <p>Poisson d'eau douce</p>
+            <span class="price">2500FCFA</span>
+        </div>
+        <div class="dish">
+            <h3>Plat 2</h3>
+            <img src="imagerestau/fonlong.jpg">
+            <p>Folong au poisson</p>
+            <span class="price">3000FCFA</span>
+        </div>
+        <div class="dish">
+            <h3>Plat 3</h3>
+            <img src="imagerestau/nous-avons-eu-un-plat.jpg">
+            <p>Ndolè au crevette</p>
+            <span class="price">3500FCFA</span>
+        </div>
+        <div class="dish">
+            <h3>Plat 4</h3>
+            <img src="imagerestau/crevette1.jpg">
+            <p>crevette à la poupy</p>
+            <span class="price">5000FCFA</span>
+        </div>
+        <div class="dish">
+            <h3>Plat 5</h3>
+            <img src="imagerestau/escarcot noir.jpg">
+            <p>Escarcot noir</p>
+            <span class="price">6500CFA</span>
+        </div>
+        <div class="dish">
+            <h3>Plat 6</h3>
+            <img src="imagerestau/chenille blanche.jpg">
+            <p>Chenille blanche</p>
+            <span class="price">7500CFA</span>
+        </div>
+    </section>
+
+    <section id="reservation">
+        <h2>Réservation</h2>
+        <form>
+            <label for="date">Date : </label>
+            <input type="date" id="date" name="date">
+            <label for="time">Heure : </label>
+            <input type="time" id="time" name="time">
+            <input type="submit" value="Réserver">
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Adresse : MBOUA, OBALA</p>
+        <p>Téléphone : 651618735</p>
+        <p>Email : wens3xsaint@gmail.com</p>
+        <p>WhatsApp : 657713068</p>
+    </section>
+
+    <footer>
+        <h2>Nous contacter</h2>
+        <form>
+            <input placeholder="Nom et prénom"></input>
+            <input placeholder="Numéro WhatsApp"></input>
+            <textarea placeholder="Votre message ici..."></textarea>
+            <button>Envoyer</button>
+        </form>
+        <ul class="social-icons">
+            <li><a href="#" class="fab fa-facebook-f"></a></li>
+            <li><a href="#" class="fab fa-twitter"></a></li>
+            <li><a href="#" class="fab fa-instagram"></a></li>
+          </ul>
+        <p>&copy; SAINTWENS. Tous droits réservés</p>
+    </footer>
+
+    <script src="js.html"></script>
+    
 </body>
-</html>

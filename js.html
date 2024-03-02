@@ -1,0 +1,93 @@
+<script>
+// Récupérer les éléments du DOM
+const navLinks = document.querySelectorAll("nav ul li a");
+const reservationForm = document.querySelector("#reservation form");
+const contactForm = document.querySelector("footer form");
+const successMessage = document.querySelector(".success-message");
+
+// Ajouter des écouteurs d'événements
+navLinks.forEach((link) => {
+  link.addEventListener("click", smoothScroll);
+});
+
+reservationForm.addEventListener("submit", handleReservation);
+contactForm.addEventListener("submit", handleContact);
+
+// Fonction pour faire défiler en douceur vers une section
+function smoothScroll(event) {
+  event.preventDefault();
+  const targetId = event.target.getAttribute("href");
+  const targetSection = document.querySelector(targetId);
+  targetSection.scrollIntoView({ behavior: "smooth" });
+}
+
+// Fonction pour gérer la soumission du formulaire de réservation
+function handleReservation(event) {
+  event.preventDefault();
+  // Récupérer les valeurs des champs du formulaire
+  const date = document.querySelector("#date").value;
+  const time = document.querySelector("#time").value;
+  // Envoyer les valeurs à un serveur ou effectuer une autre action
+  // Afficher un message de succès
+  showSuccessMessage("Réservation effectuée avec succès !");
+  // Réinitialiser le formulaire
+  event.target.reset();
+}
+
+// Fonction pour gérer la soumission du formulaire de contact
+function handleContact(event) {
+  event.preventDefault();
+  // Récupérer les valeurs des champs du formulaire
+  const name = document.querySelector("footer input:nth-of-type(1)").value;
+  const whatsapp = document.querySelector("footer input:nth-of-type(2)").value;
+  const message = document.querySelector("footer textarea").value;
+  // Envoyer les valeurs à un serveur ou effectuer une autre action
+  // Afficher un message de succès
+  showSuccessMessage("Message envoyé avec succès !");
+  // Réinitialiser le formulaire
+  event.target.reset();
+}
+
+// Fonction pour afficher un message de succès
+function showSuccessMessage(message) {
+  successMessage.textContent = message;
+  successMessage.style.display = "block";
+  setTimeout(() => {
+    successMessage.style.display = "none";
+  }, 3000);
+}
+
+// Mise à jour automatique des feuilles de style
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+} else {
+  console.error('Mettez à jour votre navigateur. Ce navigateur ne prend pas en charge WebSocket pour le rechargement en direct.');
+}
+</script>

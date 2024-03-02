@@ -1,0 +1,271 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* En-tête */
+header{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(imagerestau/poisson.jpeg) ;
+    height: 100vh;
+    background-size: cover ;
+    background-position: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 50px;
+    color: #f7f0f0;
+    margin: 0;
+    float: left;
+}
+
+nav {
+    margin-top: 60px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flood-opacity: 0%;
+    float: right;
+}
+
+nav ul li {
+    display: inline; 
+    margin-right: 20px;
+} 
+
+nav ul li a {
+    text-decoration: dashed;
+    color: #faf7f7;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    border: 1px solid #fdf9f9;
+    flood-opacity: inherit;
+    font-weight: 500;
+    transition: 0.7s ease;
+    font-size: 25px;
+}
+
+nav ul li a:hover{
+    background: #f2f2f2;
+    color: #0e0d0d;
+}
+
+nav ul li.active a{
+    background: #fff;
+    color: #0e0d0d;
+}
+
+#image-principale {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-principale h1 {
+    font-size: 48px;
+    color: #faf9f9;
+    margin-top: auto;
+}
+
+#premier-trait {
+    width: 100px;
+    height: 3px;
+    background-color: #f8f4f4;
+    margin: 10px auto;
+}
+
+#image-principale h3 {
+    font-size: 24px;
+    color: #f2f2f2;
+    margin: 0;
+}
+
+/* Styles pour du reste de la page... */
+
+/* Section Menu */
+#menu {
+    background-color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+.dish {
+    display: inline-block;
+    margin: 20px;
+    width: 300px;
+    position: relative;
+}
+
+.dish img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dish img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px rgba(15, 15, 15, 0.555);
+}
+
+.dish h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.dish h3:hover {
+    color: #ff6600;
+}
+
+.dish p {
+    font-size: 16px;
+    color: #777;
+}
+
+.price {
+    display: block;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.price:hover {
+    color: #ff6600;
+}
+
+.dish::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 13, 13, 0.034);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.dish:hover::before {
+    opacity: 1;
+}
+
+/* Section Réservation */
+#reservation {
+    background-color: #111dcf;
+    padding: 50px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+form input[type="date"],
+form input[type="time"] {
+    padding: 13px;
+    font-size: 17px;
+    margin-top: 9px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color:  #090b94;
+    color: #fffefe;
+    border: none;
+    cursor: pointer;
+}
+
+/* Section Contact */
+#contact {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+}
+
+#contact p {
+    font-size: 20px;
+    margin-top: 10px;
+    padding: auto;
+    text-align-last: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #111dcf;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer input,
+footer textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #090b94;
+    color: #f3ebeb;
+    border: none;
+    cursor: pointer;
+}
+
+/* icones des réseaux sociaux */
+.social-icons {
+    list-style: none;
+    padding: 5 10px;
+    margin: 5 10px;
+    text-align-last: right;
+    zoom: 20;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin:  15px; 
+  }
+  
+  .social-icons a {
+    display: block;
+    font-size: 50px;
+    color: #faf6f6;
+    text-decoration: none;
+    transition-duration: 0ms;
+  }
+  
+  .social-icons a:hover {
+    color: #f3f0f0;
+  }
